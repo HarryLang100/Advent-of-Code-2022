@@ -6,5 +6,5 @@ save_non_project_files = False
 
 [main]
 version = 0.2.0
-recent_files = ['problem_2.py', 'Oliver_one_liner.py']
+recent_files = ['problem_2.py', 'problem_1.py', 'calories_input.txt', 'original_input.txt']
 

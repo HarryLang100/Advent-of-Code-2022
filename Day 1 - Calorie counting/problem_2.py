@@ -5,7 +5,7 @@ Created on Thu Dec  1 10:48:38 2022
 @author: Harry Lang
 """
 
-with open("original_input.txt") as input_file:
+with open("input.txt") as input_file:
     lines = input_file.readlines()
 
 current_sum = 0
