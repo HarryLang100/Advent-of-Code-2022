@@ -8,4 +8,5 @@ recent_files = ['input.txt', 'example_input.txt', 'test_part1.py', 'part1.py', '
 
 [main]
 version = 0.2.0
+recent_files = []
 

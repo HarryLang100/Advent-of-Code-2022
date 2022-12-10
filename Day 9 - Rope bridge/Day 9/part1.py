@@ -63,7 +63,11 @@ def update_T_based_on_H(H_position, T_position):
           abs(horizontal_distance) == 1 and abs(vertical_distance) > 1):
        new_T_position = [T_position[0] + sign(vertical_distance), T_position[1] + sign(horizontal_distance)]
     elif abs(horizontal_distance) > 2 or abs(vertical_distance) > 2:
-       raise Exception("H position and T position not close enough for move.")
+       message = inspect.cleandoc(f"""
+                                  H position ({H_position})and T position 
+                                  ({T_position}) not close enough for move.
+                                  """) 
+       raise Exception(message)
     else:
        new_T_position = T_position
     return new_T_position
