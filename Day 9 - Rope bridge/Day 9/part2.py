@@ -3,13 +3,10 @@ import pdb
 import inspect
 
 from part1 import update_T_based_on_H
-from part1 import follow_instruction
 from part1 import update_H_one_step
 from part1 import parse_instructions
 
 def update_Ts_one_step(current_T_positions, new_H_position):
-    print("About to update T positions.")
-    print(f"Current T positions: {current_T_positions}.")
     """
 
     Args:
@@ -38,21 +35,18 @@ def update_Ts_one_step(current_T_positions, new_H_position):
                         length {len(position)})""")
         assert len(position) == 2, message
     
-    # Instantiate variables.
-    new_T_positions = []
-    # Update position of first tail (based on head)
-    print("Updating first tail.")
-    new_T_positions.append(update_T_based_on_H(new_H_position,
-                                               current_T_positions[0]))
+    # Update first T.
+    current_T_positions[0] = update_T_based_on_H(new_H_position, 
+                                                 current_T_positions[0])
     
-    # Update the rest of the tails (based on previous tail).
+    # Update the rest of the Ts.
     for tail_index in range(1, len(current_T_positions)):
-        new_T_positions.append(update_T_based_on_H(
-            #new_T_positions[tail_index - 1],
-            current_T_positions[tail_index - 1],
-            current_T_positions[tail_index]))
+        current_T_positions[tail_index]= update_T_based_on_H(
+        current_T_positions[tail_index - 1], 
+        current_T_positions[tail_index])
+    #print(f"current_T_positions: {current_T_positions}")
     
-    return new_T_positions
+    return current_T_positions
 
 
 def follow_instruction_multiple_tails(instruction,
@@ -69,7 +63,6 @@ def follow_instruction_multiple_tails(instruction,
     T_previous_positions = T_starting_positions
     direction = instruction[0]
     num_steps = instruction[1]
-    print(f"num_steps: {num_steps}")
     
     for step in range(num_steps):
         # Get new H position.
@@ -81,6 +74,7 @@ def follow_instruction_multiple_tails(instruction,
         
         
         # Get new T positions.
+        
         T_new_positions = update_Ts_one_step(
             T_previous_positions,
             new_H_position)
@@ -99,17 +93,13 @@ def main(filename):
     final_tail_position_history = []
     instructions = parse_instructions(filename)
     for instruction in instructions:
-        print(f"Current instruction: {instruction}.")
         H_position, T_positions, final_tail_position_list = \
             follow_instruction_multiple_tails(
                 instruction,
                 H_position, 
                 T_positions)
-        print(f"New H position: {H_position}.")
         for item in final_tail_position_list:
             final_tail_position_history.append(item)
-    print(f"Final tail position history: {final_tail_position_history}.")
-                
     # Finally, count the number of unique tail positions.
     unique_position_counter = 0
     unique_positions_found = []
@@ -123,5 +113,5 @@ def main(filename):
 
 #%%
 if __name__ == "__main__":
-    result = main("example_input_part_2.txt") # Expect 36.
+    result = main("input.txt") # Expect 36.
     print(result)

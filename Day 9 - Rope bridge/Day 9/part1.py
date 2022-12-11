@@ -5,10 +5,10 @@ def parse_instructions(filename):
     list.
 
     Args:
-        filename (string): Name of the file.
+        filename (string): Name of the file.    
 
     Returns:
-        List of instructions, e.g. [['R', 4], ['U', 4], ...].
+        list: List of instructions, e.g. [['R', 4], ['U', 4], ...].
     """
     instructions_list = []
     with open(filename) as file:
@@ -20,16 +20,36 @@ def parse_instructions(filename):
 
  
 #%%
-def sign(input):
-    if input > 0:
+def sign(integer):
+    """Take an integer and returns its sign (as in, 1 for a positive
+    number, 0 for 0 and -1 for a negative number.)
+
+    Args:
+        integer (int): Name of the file.    
+
+    Returns:
+        int: Sign of the integer.
+    """
+    if integer > 0:
         return_value = 1
-    elif input < 0:
+    elif integer < 0:
         return_value = -1
     else:
         return 0
     return return_value
 
 def update_T_based_on_H(H_position, T_position):
+    """Works out the new tail position based on the head position and the
+    previous tail position. All positions are lists of the form
+    [vertical position, horizontal position].
+
+    Args:
+        H_position (list): Position of the head.
+        T_position (list): Previous position of the tail.
+
+    Returns:
+        list: New position of the tail.
+    """
     # Make sure inputs are valid.
     message = inspect.cleandoc(f"""
                                H_position is of type {type(H_position)},
@@ -62,6 +82,8 @@ def update_T_based_on_H(H_position, T_position):
     elif (abs(horizontal_distance) > 1 and abs(vertical_distance) == 1 or
           abs(horizontal_distance) == 1 and abs(vertical_distance) > 1):
        new_T_position = [T_position[0] + sign(vertical_distance), T_position[1] + sign(horizontal_distance)]
+    elif abs(horizontal_distance) == 2 and abs(vertical_distance) == 2:
+        new_T_position = [T_position[0] + sign(vertical_distance), T_position[1] + sign(horizontal_distance)]
     elif abs(horizontal_distance) > 2 or abs(vertical_distance) > 2:
        message = inspect.cleandoc(f"""
                                   H position ({H_position})and T position 

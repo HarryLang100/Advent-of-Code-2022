@@ -21,6 +21,17 @@ def test_parse_instructions_example():
                 the example input.""")
     assert actual_output == expected_output, message
     
+def test_update_T_based_on_H_far_right():
+    input_T_position = [0, 0]
+    input_H_position = [2, 2]
+    expected_output = [1, 1]
+    actual_output = update_T_based_on_H(input_H_position, input_T_position)
+    message = inspect.cleandoc(f"""
+            The 'far right' test for update_T_based_on_H() failed. The
+            returned position of T was {actual_output}, instead of 
+            {expected_output}.""")
+    assert actual_output == expected_output, message
+    
 def test_update_T_based_on_H_one_right():
     input_T_position = [2, 2]
     input_H_position = [2, 4]
