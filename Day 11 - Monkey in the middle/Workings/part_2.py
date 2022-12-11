@@ -1,7 +1,7 @@
 from part_1 import parse_input
 from part_1 import get_monkey_business_level
 
-def update_worry_level_2(worry_level, instruction, prod_divisibility_numbers):
+def update_worry_part_2_2(worry_level, instruction, prod_divisibility_numbers):
 
     # Understand what operation to perform.
     operation = instruction[1]
@@ -54,7 +54,7 @@ def monkey_turn(monkey_index, monkey_information):
     for item in items_to_inspect:
         current_worry_level = item
         instruction = monkey_information[monkey_index][1]
-        new_worry_level = update_worry_level_2(current_worry_level,
+        new_worry_level = update_worry_partS_2(current_worry_level,
                                              instruction,
                                              divisibility_numbers_prod)
         test_division_num = monkey_information[monkey_index][2]
@@ -68,5 +68,5 @@ def monkey_turn(monkey_index, monkey_information):
     return monkey_information, n_items_to_inspect
 
 #%%
-result = main("input.txt", 10000) 
+result = main("../input.txt", 10000) 
 print(f"Result: {result}.")

@@ -98,5 +98,5 @@ def main(filename, n_rounds):
     return get_monkey_business_level(inspection_count)
 
 #%%
-result = main("input.txt", 20)
+result = main("../input.txt", 20)
 print(f"Result: {result}.")

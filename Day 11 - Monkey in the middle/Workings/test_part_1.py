@@ -9,7 +9,7 @@ from part_1 import get_monkey_business_level
 from part_1 import main
 
 def test_parse_input_mini_example():
-    filename = "mini_example_input.txt"
+    filename = "../mini_example_input.txt"
     expected_output = [
         [[79, 98], 
          ['old', '*', '19'],
@@ -42,7 +42,7 @@ def test_update_worry_level_add():
     assert actual_output_worry_level == expected_output_worry_level
 
 def test_monkey_turn():
-    monkey_information = parse_input("example_input.txt")
+    monkey_information = parse_input("../example_input.txt")
     expected_n_items_inspected = 2
     expected_new_monkey_information = [
      [[], ['old', '*', '19'], 23, 2, 3],
@@ -64,7 +64,7 @@ def test_get_monkey_business_level():
     assert actual_monkey_business_level == expected_monkey_business_level
     
 def test_main_example():
-    filename = "example_input.txt"
+    filename = "../example_input.txt"
     n_rounds = 20
     expected_result = 10605
     actual_result = main(filename, n_rounds)
