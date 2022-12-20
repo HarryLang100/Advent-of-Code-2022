@@ -21,7 +21,7 @@ class TestGetCoordinateSum(object):
         
 
 class TestMoveNumber(object):
-    def test_move_number_forward(self):
+    def test_forward(self):
         number_to_move = 2
         current_index = 1
         input_numbers = [1, 2, 3, 4, 5]
@@ -29,7 +29,7 @@ class TestMoveNumber(object):
         actual_output = move_number(number_to_move, current_index, input_numbers)
         assert actual_output == expected_output
     
-    def test_move_number_forward_to_end(self):
+    def test_forward_to_end(self):
         number_to_move = 3
         current_index = 1
         input_numbers = [1, 3, 3, 4, 5]
@@ -37,7 +37,7 @@ class TestMoveNumber(object):
         actual_output = move_number(number_to_move, current_index, input_numbers)
         assert actual_output == expected_output
     
-    def test_move_number_forward_same_place(self):
+    def test_forward_same_place(self):
         number_to_move = 2
         current_index = 1
         input_numbers = [1, 2]
@@ -45,7 +45,7 @@ class TestMoveNumber(object):
         actual_output = move_number(number_to_move, current_index, input_numbers)
         assert actual_output == expected_output
     
-    def test_move_number_backward(self):
+    def test_backward(self):
         number_to_move = -3
         current_index = 1
         input_numbers = [1, -3, 2, 3, -2, 0, 4]
@@ -53,7 +53,7 @@ class TestMoveNumber(object):
         actual_output = move_number(number_to_move, current_index, input_numbers)
         assert actual_output == expected_output
     
-    def test_move_number_smaller_index(self):
+    def test_smaller_index(self):
         number_to_move = -3
         current_index= 5
         input_numbers = [1, 2, 3, 4, 5, -3, 6, 7]

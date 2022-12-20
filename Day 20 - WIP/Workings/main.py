@@ -12,9 +12,10 @@ def move_number(number_to_move, current_index, numbers):
     new_index = (current_index + number_to_move)
     if new_index >= 0:
         new_index = new_index % len(numbers)
-    else:
-        new_index = new_index % len(numbers) - 1 # I'm not sure why
-        # this is necessary, but it works.
+    elif new_index < 0:
+        new_index = (len(numbers) - 1 + new_index) % len(numbers)
+        if new_index == len(numbers) - 1:
+            new_index = 0
     if new_index == current_index: # Easy!
         new_numbers = numbers
     elif new_index > current_index:
