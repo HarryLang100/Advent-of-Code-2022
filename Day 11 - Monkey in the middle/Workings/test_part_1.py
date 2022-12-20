@@ -72,3 +72,5 @@ def test_main_example():
                    The main() function failed on the example input: it returned
                    {actual_result} instead of {expected_result}.""")
     assert actual_result == expected_result, message
+    
+test
