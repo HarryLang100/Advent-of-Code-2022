@@ -36,8 +36,13 @@ def get_next_potential_position(current_position,
     assert current_direction in ("N", "S", "E", "W")
     
     if current_direction == "N":
-        potential_new_position = (current_position[0] - 1, 
+        if current_position[0] == 0: # In this case, wrap 
+            new_vertical_position = len(map_lines) - 1
+        else:
+            new_vertical_position =  current_position[0] - 1
+        potential_new_position = (new_vertical_position, 
                                   current_position[1])
+        if 
     elif current_direction 
     
 
