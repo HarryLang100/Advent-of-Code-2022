@@ -5,7 +5,7 @@ Solving the [Advent of Code 2022](https://adventofcode.com/2022) programming cha
 
 ## Table of problems
 
-| Day | Name | Done? | Comment
+| Day | Name | Done? (- means not <br /> attempted yet) | Comment
 | --- | ----------- | ---| --- |
 | 1 | [Calorie Counting](https://adventofcode.com/2022/day/1) | Y |
 | 2 | [Rock Paper Scissors](https://adventofcode.com/2022/day/2) | Y |
@@ -18,16 +18,16 @@ Solving the [Advent of Code 2022](https://adventofcode.com/2022) programming cha
 | 9 | [Rope Bridge](https://adventofcode.com/2022/day/9) | Y |
 | 10 | [Cathode-Ray Tube](https://adventofcode.com/2022/day/10) | Y |
 | 11 | [Monkey in the Middle](https://adventofcode.com/2022/day/11) | Y |
-| 12 | [Hill Climbing Algorithm](https://adventofcode.com/2022/day/12) | 
-| 13 | [Distress Signal](https://adventofcode.com/2022/day/13) | Y |
-| 14 | [Regolith Reservoir](https://adventofcode.com/2022/day/14) |
-| 15 | [Beacon Exclusion Zone](https://adventofcode.com/2022/day/15) |
-| 16 | [Proboscidea Volcanium](https://adventofcode.com/2022/day/16) |
-| 17 | [Pyroclastic Flow](https://adventofcode.com/2022/day/17) |
-| 18 | [Boiling Boulders](https://adventofcode.com/2022/day/18) |
-| 19 | [Not Enough Minerals](https://adventofcode.com/2022/day/19) |
+| 12 | [Hill Climbing Algorithm](https://adventofcode.com/2022/day/12) | - |
+| 13 | [Distress Signal](https://adventofcode.com/2022/day/13) | Y | 
+| 14 | [Regolith Reservoir](https://adventofcode.com/2022/day/14) | - |
+| 15 | [Beacon Exclusion Zone](https://adventofcode.com/2022/day/15) | - |
+| 16 | [Proboscidea Volcanium](https://adventofcode.com/2022/day/16) | - |
+| 17 | [Pyroclastic Flow](https://adventofcode.com/2022/day/17) | - |
+| 18 | [Boiling Boulders](https://adventofcode.com/2022/day/18) | - |
+| 19 | [Not Enough Minerals](https://adventofcode.com/2022/day/19) | - |
 | 20 | [Grove Positioning System](https://adventofcode.com/2022/day/20) | N | My part 1 solution works on the example input but not on the actual input. |
-| 21 | [Monkey Math](https://adventofcode.com/2022/day/21) |
+| 21 | [Monkey Math](https://adventofcode.com/2022/day/21) | - |
 | 22 | [Monkey Map](https://adventofcode.com/2022/day/22) | N | Not working yet. |
 
 
