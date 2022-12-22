@@ -3,6 +3,7 @@ import pytest
 from main import parse_input
 from main import calculate_password
 from main import get_new_direction
+from main import get_next_tile_coordinates
 
 class TestParseInput(object):
     def test_on_example(self):
@@ -41,3 +42,19 @@ class TestGetNewDirection(object):
         expected_output = "W"
         actual_output = get_new_direction("N", "L")
         assert actual_output == expected_output
+        
+class TestGetNextTileCoordinates(object):
+    @pytest.fixture
+    def load_example_map(self):
+        filename = "../example_input.txt"
+        example_map, example_path = parse_input(filename)
+        yield example_map
+        
+    def test_move_north_simple(object, load_example_map):
+        start_position = (7, 0)
+        expected_end_position = (6, 0)
+        actual_end_position = get_next_tile_coordinates(start_position,
+                                                        "N",
+                                                        load_example_map)
+        assert actual_end_position == expected_end_position
+            
