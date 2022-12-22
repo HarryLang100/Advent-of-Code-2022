@@ -4,6 +4,16 @@ from main import parse_input
 from main import calculate_password
 from main import get_new_direction
 from main import get_next_tile_coordinates
+from main import convert_path_text_to_instructions
+
+class TestConvertPathTextToInstructions(object):
+    def test_example_path(self):
+        input_path = "10R5L5R10L4R5L5"
+        expected_output = [10, "R", 5, "L", 5, "R", 10, "L", 4, "R", 5, "L", 5]
+        actual_output = convert_path_text_to_instructions(input_path)
+        assert actual_output == expected_output
+
+
 
 class TestParseInput(object):
     def test_on_example(self):

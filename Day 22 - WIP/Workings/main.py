@@ -7,6 +7,21 @@ def parse_input(filename):
     path_line = lines[-1]
     return map_lines, path_line
 
+def convert_path_text_to_instructions(path_line):
+    instruction_list = []
+    current_number = ""
+    for index in range(len(path_line)):
+        if path_line[index] in ("R", "L"):
+            if current_number != "":
+                instruction_list.append(int(current_number))
+                current_number = ""
+            instruction_list.append(path_line[index])
+        else:
+            current_number += path_line[index]
+    if current_number != "":
+        instruction_list.append(int(current_number))
+    return instruction_list
+
 
 def calculate_password(final_row, final_column, final_facing):
     result = 1000 * final_row + 4 * final_column + final_facing
@@ -33,40 +48,20 @@ def get_new_direction(current_direction, turn_letter):
         raise Exception(message)
     return new_direction
 
-def get_next_tile_coordinates(current_position, 
-                              current_direction, 
-                              map_lines):
-    
-    # What would be the coordinates of the next position?
-    if current_direction == "N":
-        new_vertical_position = current_position[0] # This will be updated.
-        new_horizontal_position = current_position[1]
-        next_position_found = False
-        while not next_position_found:
-            new_vertical_position -= 1 # North one place.
-            print(f"Current vertical position: {new_vertical_position}")
-            if new_vertical_position == -1: # Wrap around top edge.
-                new_vertical_position = len(map_lines) - 1
-            try:
-                if map_lines[new_vertical_position][new_horizontal_position] != " ":
-                    next_position_found = True
-            except:
-                pass
-    return (new_vertical_position, new_horizontal_position)
-    
-def test_move_north():
-    map_lines, path_line = parse_input("../example_input.txt")
-    start_position = (7, 0)
-    expected_end_position = (6, 0)
-    actual_end_position = get_next_tile_coordinates(start_position,
-                                                    "N",
-                                                    map_lines)
+
             
-# def main(filename):
-#     map_lines, path_line = parse_input(filename)
-#     current_position = get_initial_coordinates(map_lines)
-#     current_direction = "E"
+def main(filename):
+    map_lines, path_line = parse_input(filename)
+    instructions = convert_path_text_to_instructions(path_line)
+    current_position = get_initial_coordinates(map_lines)
+    current_direction = "E"
     
-#     for instruction in path_line:
+    for instruction in instructions:
+        if instruction in ("R", "L"):
+            current_direction = get_new_direction(current_direction, instruction)
+        else:
+            current_position = move_forward(current_position,
+                                            map_lines,
+                                            instruction)
         
         
