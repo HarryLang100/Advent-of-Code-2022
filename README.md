@@ -15,7 +15,7 @@ Solving the [Advent of Code 2022](https://adventofcode.com/2022) programming cha
 | 6 | [Tuning Trouble](https://adventofcode.com/2022/day/6) | Y |
 | 7 | [No Space Left On Device](https://adventofcode.com/2022/day/7) | Y |
 | 8 | [Treetop Tree Houses](https://adventofcode.com/2022/day/8) | Y |
-| 9 | [Rope Bridge](https://adventofcode.com/2022/day/9) | Y |
+| 9 | [Rope Bridge](https://adventofcode.com/2022/day/9) | N | Done part 1 only. |
 | 10 | [Cathode-Ray Tube](https://adventofcode.com/2022/day/10) | Y |
 | 11 | [Monkey in the Middle](https://adventofcode.com/2022/day/11) | Y |
 | 12 | [Hill Climbing Algorithm](https://adventofcode.com/2022/day/12) | - |
